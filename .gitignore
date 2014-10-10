@@ -228,3 +228,13 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+Form1.cs
+Form1.Designer.cs
+Form1.resx
+CosmicEncounter.csproj
+Program.cs
+Properties/AssemblyInfo.cs
+Properties/Resources.Designer.cs
+Properties/Resources.resx
+Properties/Settings.Designer.cs
+Properties/Settings.settings
