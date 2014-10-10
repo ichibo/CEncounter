@@ -193,14 +193,28 @@ namespace CosmicEncounter
     {
         public readonly EncounterInvolvementType Involvement;
         public readonly int ShipCount;
-        public BaseEncounterCard EncounterCard;
+
+        // Actual encounter card that was played
+        private BaseEncounterCard _encounterCard; 
+
+        // Proxy encounter card after any modifiers or morph cards are applied.
+        public BaseEncounterCard ProxyEncounterCard = null;
 
         //private EncounterPlayerContext() { }
         public EncounterPlayerContext(int shipcount, EncounterInvolvementType involvement, BaseEncounterCard encounterCard)
         {
             ShipCount = shipcount;
             Involvement = involvement;
-            EncounterCard = encounterCard;
+            _encounterCard = encounterCard;
+        }
+
+        public BaseEncounterCard EncounterCard
+        {
+            get
+            {
+                if (ProxyEncounterCard != null) return ProxyEncounterCard;
+                else return _encounterCard;
+            }
         }
     }
 }
